@@ -12,6 +12,9 @@ require 'webmock/minitest'
 
 
 class ActiveSupport::TestCase
+  # check for all pending migrations
+  ActiveRecord::Migration.check_pending!
+
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 

@@ -5,14 +5,14 @@ class UsersControllerTest < ActionController::TestCase
     @user = users(:one)
   end
 
-  test 'shoud have default name' do
+  test 'should have default name' do
     get :new
     assert_response :success
     assert_equal "Dummy", assigns(:user).name
   end
 
 # test for create action
-  test 'shoud create user' do
+  test 'should create user' do
     assert_difference("User.count", 1) do
       post :create, user: {name: @user.name, email: @user.email}
 
@@ -24,14 +24,14 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to user_path(assigns(:user))
   end
 
-  test "shoud destroy user" do
+  test "should destroy user" do
     assert_difference('User.count', -1) do
       delete :destroy, id: @user
       assert_redirected_to users_path
     end
   end
 
-  test "shoud show user" do
+  test "should show user" do
     get :show, id: @user
     # test response of action.
     # assert_response :success

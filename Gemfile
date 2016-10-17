@@ -43,3 +43,5 @@ group :test do
   gem "minitest-rails"
   gem "minitest-rails-capybara"
 end
+# for stubing requests
+gem 'webmock'

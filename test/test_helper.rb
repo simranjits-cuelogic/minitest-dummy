@@ -7,6 +7,9 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/pride"
 
+# crooking web response
+require 'webmock/minitest'
+
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
@@ -17,7 +20,8 @@ class ActiveSupport::TestCase
     alias :context :describe
   end
 
-  # Add more helper methods to be used by all tests here...
+  # including factory girl
+  #include FactoryGirl::Syntax::Methods
 end
 
 class IntegrationTest < MiniTest::Spec

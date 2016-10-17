@@ -44,8 +44,6 @@ class UsersControllerTest < ActionController::TestCase
   end
 end
 
-
-
 # Spec way to write cases
 
 # describe UsersController do

@@ -1,7 +1,7 @@
 defaults: &defaults
   adapter: postgresql
-  username: simranjit
-  password: simran
+  username: postgres
+  password: postgres
   host: localhost
   port: 5432
   pool: 10

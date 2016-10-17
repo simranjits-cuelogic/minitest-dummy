@@ -6,17 +6,29 @@ class Converter
   end
 
   def convert!
-    body = get_exchange_rate_from_api
-    rate = extract_exchange_rate(body)
+    rate = get_rate(scraping_api)
     @amount * rate
   end
 
-  private
-  def extract_exchange_rate(body)
-    JSON.parse(body)["rates"][@target]
+  # private
+  # def parse_response_for_rate(body)
+  #   # expected response format
+  #   # {"base":"USD","date":"--","rates":{"EUR":0.90893}}
+
+  #   JSON.parse(body)["rates"][@target]
+  # end
+
+  def parse_response_of body
+    JSON.parse(body)
   end
 
-  def get_exchange_rate_from_api
+  def get_rate scraping_data
+    response_body = parse_response_of(scraping_data)
+
+    response_body["rates"][@target]
+  end
+
+  def scraping_api
     url = URI(api_url)
     Net::HTTP.get(url)
   end

@@ -21,7 +21,7 @@ class ActiveSupport::TestCase
   end
 
   # including factory girl
-  #include FactoryGirl::Syntax::Methods
+  include FactoryGirl::Syntax::Methods
 end
 
 class IntegrationTest < MiniTest::Spec

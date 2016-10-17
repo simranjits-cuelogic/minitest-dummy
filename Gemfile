@@ -42,6 +42,7 @@ gem 'spring',        group: :development
 group :test do
   gem "minitest-rails"
   gem "minitest-rails-capybara"
+  gem "factory_girl_rails", "~> 4.0"
 end
 # for stubing requests
 gem 'webmock'
